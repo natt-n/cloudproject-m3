@@ -13,13 +13,13 @@ RUN apt-get update && apt-get install -y \
 
 # Copy project files
 COPY requirements.txt .
-COPY pedestrian_detection.py .
+COPY pedestrian_pipeline.py .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Download YOLOv5 model (avoids downloading in every run)
+# Download YOLOv5 model to avoid re-downloading in every run
 RUN python -c "import torch; torch.hub.load('ultralytics/yolov5', 'yolov5s')"
 
 # Set the entrypoint to run the Beam pipeline
-ENTRYPOINT ["python", "pedestrian_detection.py"]
+ENTRYPOINT ["python", "pedestrian_pipeline.py"]
