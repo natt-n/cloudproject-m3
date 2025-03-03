@@ -1,0 +1,25 @@
+{
+    "image": "northamerica-northeast2-docker.pkg.dev/phrasal-bonus-449202-e8/dataflow-repo/pedestrian_pipeline:v1",
+    "sdkInfo": {
+      "language": "PYTHON"
+    },
+    "metadata": {
+      "name": "Pedestrian Detection Pipeline",
+      "description": "Detect pedestrians and estimate depth using YOLOv5 and Depth Pro in Google Cloud Dataflow.",
+      "parameters": [
+        {
+          "name": "input_topic",
+          "label": "Input Pub/Sub Topic",
+          "helpText": "Pub/Sub topic from which the pipeline will read input images.",
+          "defaultValue": "projects/phrasal-bonus-449202-e8/topics/pedestrian_detection_input"
+        },
+        {
+          "name": "output_topic",
+          "label": "Output Pub/Sub Topic",
+          "helpText": "Pub/Sub topic where the pipeline will publish detection results.",
+          "defaultValue": "projects/phrasal-bonus-449202-e8/topics/pedestrian_detection_output"
+        }
+      ]
+    }
+  }
+  
